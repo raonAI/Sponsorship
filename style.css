@@ -1,0 +1,518 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #111318;
+  --muted: #606879;
+  --line: rgba(15, 23, 42, 0.08);
+  --card: rgba(255, 255, 255, 0.84);
+  --shadow: 0 28px 90px rgba(15, 23, 42, 0.10);
+  --soft-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+  --instagram: linear-gradient(135deg, #feda75 0%, #fa7e1e 20%, #d62976 48%, #962fbf 74%, #4f5bd5 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255, 205, 225, 0.56), transparent 30%),
+    radial-gradient(circle at 92% 5%, rgba(151, 184, 255, 0.48), transparent 28%),
+    linear-gradient(180deg, #fbfbfd 0%, #f5f6fa 44%, #eef1f7 100%);
+  line-height: 1.72;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #535c70;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 24px 92px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow,
+.summary-label {
+  margin: 0 0 13px;
+  color: #747d91;
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.hero-subtitle {
+  max-width: 720px;
+  margin: 24px auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 900;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.product-tab:hover,
+.bottom-instagram-btn:hover,
+.floating-instagram:hover {
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  color: #fff;
+  background: #111318;
+  box-shadow: var(--soft-shadow);
+}
+
+.btn-instagram {
+  color: #fff;
+  background: var(--instagram);
+  box-shadow: 0 18px 44px rgba(160, 49, 149, 0.24);
+}
+
+.hero-badges {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-badges span {
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.74);
+  border: 1px solid rgba(15,23,42,0.07);
+  color: #4f586b;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.hero-gradient {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.55;
+}
+
+.hero-gradient-left {
+  width: 430px;
+  height: 430px;
+  background: rgba(214, 41, 118, 0.18);
+  left: -110px;
+  top: -80px;
+}
+
+.hero-gradient-right {
+  width: 430px;
+  height: 430px;
+  background: rgba(79, 91, 213, 0.18);
+  right: -110px;
+  top: -70px;
+}
+
+.proposal-section,
+.contact-section {
+  padding: 38px 24px 100px;
+}
+
+.section-title {
+  max-width: 960px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.main-layout {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.proposal-card,
+.summary-card,
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
+}
+
+.proposal-card {
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.message-block p {
+  margin: 0 0 30px;
+  color: #1e2430;
+  font-size: clamp(1rem, 2vw, 1.08rem);
+}
+
+.message-block strong {
+  color: #07080b;
+}
+
+.product-tabs-wrapper {
+  margin: 8px 0 34px;
+  padding: 18px;
+  border-radius: 28px;
+  background: #f7f8fb;
+  border: 1px solid rgba(15,23,42,0.06);
+}
+
+.product-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.product-tab {
+  cursor: pointer;
+  border: 0;
+  min-height: 72px;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #4f586b;
+  font-weight: 900;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-tab span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.78rem;
+  color: #97a0b3;
+}
+
+.product-tab.active {
+  color: #fff;
+  background: var(--instagram);
+  box-shadow: 0 18px 42px rgba(160, 49, 149, 0.22);
+}
+
+.product-tab.active span {
+  color: rgba(255,255,255,0.78);
+}
+
+.product-viewer {
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(15,23,42,0.06);
+}
+
+.product-viewer img {
+  width: 100%;
+  height: auto;
+}
+
+.summary-panel {
+  display: grid;
+  gap: 20px;
+  position: sticky;
+  top: 86px;
+}
+
+.summary-card {
+  padding: 28px;
+}
+
+.summary-card h3 {
+  margin: 0 0 16px;
+  font-size: 1.55rem;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+}
+
+.summary-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #3e4657;
+}
+
+.reward-card {
+  background: #111318;
+  color: #fff;
+}
+
+.reward-card .summary-label,
+.reward-card .small-note {
+  color: rgba(255,255,255,0.64);
+}
+
+.reward-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.reward-row span {
+  font-weight: 900;
+  color: #fff;
+}
+
+.small-note {
+  margin: 14px 0 0;
+  font-size: 0.92rem;
+}
+
+.instagram-card {
+  color: #fff;
+  background: var(--instagram);
+}
+
+.instagram-title {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.instagram-title strong {
+  display: block;
+  font-size: 1.15rem;
+}
+
+.instagram-title span:last-child {
+  display: block;
+  opacity: .88;
+}
+
+.instagram-card p {
+  margin: 18px 0 0;
+  color: rgba(255,255,255,0.86);
+}
+
+.instagram-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 17px;
+  background: rgba(255,255,255,0.18);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24);
+}
+
+.instagram-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.contact-card {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 52px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(214,41,118,0.13), transparent 30%),
+    rgba(255,255,255,0.88);
+}
+
+.contact-card h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.05em;
+}
+
+.contact-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.bottom-instagram-btn,
+.floating-instagram {
+  color: #fff;
+  background: var(--instagram);
+  box-shadow: 0 20px 50px rgba(160, 49, 149, 0.26);
+}
+
+.bottom-instagram-btn {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-instagram {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 120;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px 12px 12px;
+  border-radius: 22px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-instagram strong,
+.floating-instagram small {
+  display: block;
+  line-height: 1.16;
+}
+
+.floating-instagram small {
+  opacity: 0.88;
+}
+
+@media (max-width: 1024px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-panel {
+    position: static;
+  }
+
+  .product-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    padding: 14px 16px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    padding: 86px 16px 72px;
+  }
+
+  .proposal-section,
+  .contact-section {
+    padding: 28px 16px 84px;
+  }
+
+  .product-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-instagram {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    justify-content: center;
+  }
+}
